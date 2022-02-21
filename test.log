@@ -1,0 +1,11 @@
+imm++
+current func =  [f x] [ make "tt n :f :x return f :tt ] 
+varName added: n
+make++
+current func =  [f x] [ make "tt n :f :x return f :tt ] 
+varName added: n
+return value =  [f x] [ make "tt n :f :x return f :tt ] 
+imm++
+current func = [x] [return add :x 1]
+make++
+current func = [x] [return add :x 1]

@@ -1,0 +1,38 @@
+make "isPrime [[n] [
+    make "isPrimeIn [ [n i]
+        [
+            if lt :n 3
+                [return eq :n 2]
+                [
+                    if eq mod :n :i 0 
+                        [return false]
+                        [return isPrimeIn :n add :i 1]
+                ]
+        ]
+    ]
+    return isPrimeIn :n 2
+]]
+
+print isPrime 
+
+// 判断素数：i减小版
+const isPrime_good = (n: number, i: number): boolean => {
+    if (i < 2)
+        return true;
+    if (n % i == 0)
+        return false;
+    return isPrime_good(n, i - 1);
+}  // 使用 isPrime(n, n - 1) 调用
+
+make "isPrime_good [[n] [
+    make "isPrime_good_in [[n i] [
+        if lt :i 2
+            [return true]
+            [
+                if eq mod :n :i 0
+                    [return false]
+                    [return isPrime_good_in :n sub :i 1]
+            ]
+    ]]
+    return isPrime_good_in :n sub :n 1
+]]
